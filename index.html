@@ -5,68 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hanzxcm</title>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0d0216; /* Ungu sangat gelap */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-            color: #e0b0ff; /* Tulisan ungu muda */
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background-color: #0d0216; font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden; color: #e0b0ff;
         }
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
         .content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            position: relative; z-index: 2; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; min-height: 100vh;
+            text-align: center; padding: 20px;
         }
-
         .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 3px solid #8a2be2;
-            box-shadow: 0 0 20px #8a2be2;
-            margin-bottom: 25px;
-            object-fit: cover;
+            width: 150px; height: 150px; border-radius: 50%;
+            border: 3px solid #8a2be2; box-shadow: 0 0 20px #8a2be2;
+            margin-bottom: 15px; object-fit: cover;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 5px;
-            margin: 10px 0;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px #8a2be2;
-        }
-
+        h1 { font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0; text-shadow: 0 0 10px #8a2be2; text-transform: lowercase; }
         .quote {
-            max-width: 600px;
-            line-height: 1.6;
-            font-style: italic;
-            background: rgba(138, 43, 226, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #8a2be2;
-            margin: 20px 0;
-            font-size: 1.1rem;
+            max-width: 500px; line-height: 1.6; font-style: italic;
+            background: rgba(138, 43, 226, 0.1); padding: 15px;
+            border-radius: 10px; border-left: 4px solid #8a2be2; margin: 15px 0; font-size: 0.95rem;
         }
+        .social-links { margin-top: 20px; }
+        .social-links a {
+            color: #e0b0ff; font-size: 1.8rem; margin: 0 15px;
+            transition: 0.3s; text-decoration: none;
+        }
+        .social-links a:hover { color: #fff; text-shadow: 0 0 15px #8a2be2; transform: scale(1.2); }
+        .footer-name { font-weight: bold; margin-top: 15px; color: #8a2be2; font-size: 1.2rem; }
+        
+        .music-control {
+            position: fixed; bottom: 20px; right: 20px; z-index: 10;
+            background: rgba(138, 43, 226, 0.4); padding: 15px; border-radius: 50%;
+            cursor: pointer; border: 1px solid #8a2be2; box-shadow: 0 0 10px #8a2be2;
+            transition: 0.3s;
+        }
+        .music-control:hover { transform: scale(1.1); background: rgba(138, 43, 226, 0.6); }
+    </style>
+</head>
+<body>
 
-        .footer-name {
+    <div id="particles-js"></div>
+
+    <audio id="myAudio" loop>
+        <source src="v4.www-y2mate.blog - Bôa - Duvet (Lyrics) (320 KBps).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <i id="musicIcon" class="fas fa-music"></i>
+    </div>
+
+    <div class="content">
+        <img src="IMG_20251225_143618_981.jpg" alt="hanzxcm" class="profile-img">
+        
+        <h1>hanzxcm</h1>
+        
+        <p class="quote">
+            "Saya merespons kesedihan ini dengan metodologi penelitian keamanan: contain dulu kerusakannya, lalu analyze secara mendalam, document setiap temuan, dan akhirnya architect sebuah sistem pertahanan yang tidak hanya memulihkan, tetapi juga mengubah kerapuhan menjadi fondasi ketangguhan."
+        </p>
+
+        <div class="footer-name">hanzxcm</div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/saidrehan_?igsh=b2x2aDhkMGFtbzQ4" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@lvphyaa" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com/@hanzxcm?si=dhnfhv_VYQKBZW1r" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Partikel Konfigurasi (Warna Ungu & Interaksi Memisah)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#8a2be2" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#8a2be2", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2 }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "repulse" }, /* Memisah saat ditekan */
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140 },
+                    "repulse": { "distance": 200, "duration": 0.4 }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Kontrol Musik
+        var audio = document.getElementById("myAudio");
+        var icon = document.getElementById("musicIcon");
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                icon.classList.remove("fa-music");
+                icon.classList.add("fa-pause");
+            } else {
+                audio.pause();
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-music");
+            }
+        }
+    </script>
+</body>
+</html>
             font-weight: bold;
             margin-top: 10px;
             letter-spacing: 2px;
