@@ -1,35 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HANZXCM | SECURITY</title>
+    <title>hanzxcm</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: #00ff41;
-            font-family: 'Courier New', Courier, monospace;
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d0216; /* Ungu sangat gelap */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            color: #e0b0ff; /* Tulisan ungu muda */
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
         }
-        .container { text-align: center; border: 1px solid #00ff41; padding: 2rem; box-shadow: 0 0 15px #00ff41; }
-        .glitch { font-size: 2rem; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px #ff0000; }
-        .typing { border-right: 2px solid #00ff41; white-space: nowrap; overflow: hidden; animation: typing 3s steps(30, end), blink .5s step-end infinite; }
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink { from, to { border-color: transparent } 50% { border-color: #00ff41 } }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #8a2be2;
+            box-shadow: 0 0 20px #8a2be2;
+            margin-bottom: 25px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #8a2be2;
+        }
+
+        .quote {
+            max-width: 600px;
+            line-height: 1.6;
+            font-style: italic;
+            background: rgba(138, 43, 226, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #8a2be2;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .footer-name {
+            font-weight: bold;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            color: #8a2be2;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="glitch">HANZXCM-SEC.CLOUD</div>
-        <div class="typing">System access granted...</div>
-        <p style="color: #888;">[ Security Researcher / Pentester ]</p>
-        <p style="font-size: 0.8rem; margin-top: 20px;">© 2025 ALL RIGHTS RESERVED</p>
+
+    <div id="particles-js"></div>
+
+    <div class="content">
+        <img src="IMG_20251225_143618_981.jpg" alt="hanzxcm" class="profile-img">
+        
+        <h1>hanzxcm</h1>
+        
+        <p class="quote">
+            "Saya merespons kesedihan ini dengan metodologi penelitian keamanan: contain dulu kerusakannya, lalu analyze secara mendalam, document setiap temuan, dan akhirnya architect sebuah sistem pertahanan yang tidak hanya memulihkan, tetapi juga mengubah kerapuhan menjadi fondasi ketangguhan."
+        </p>
+
+        <div class="footer-name">hanzxcm</div>
     </div>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#8a2be2" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#8a2be2", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }, /* Memisah/Menambah saat klik */
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
